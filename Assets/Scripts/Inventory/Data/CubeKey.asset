@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23fb573ca98336c478797c70f59ae1e0, type: 3}
-  m_Name: Cube
+  m_Name: CubeKey
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  ItemName: Cube
+  ItemName: CubeKey
   ID: 1
   Icon: {fileID: 0}
-  IsStackable: 1
+  IsStackable: 0
   category: 0
   PickupMessage: 
   Description: 

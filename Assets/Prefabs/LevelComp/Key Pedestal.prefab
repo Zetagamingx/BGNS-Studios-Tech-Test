@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 7017342956152994807}
   - component: {fileID: 4067187862066763548}
   - component: {fileID: 4338085184339948559}
+  - component: {fileID: 3368306672657125614}
   m_Layer: 0
   m_Name: Key Pedestal
   m_TagString: Untagged
@@ -206,7 +207,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2726004319672688661}
   serializedVersion: 2
-  m_LocalRotation: {x: -4.3297806e-17, y: 0.7071068, z: 0.7071068, w: -4.3297806e-17}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0.7071068, w: 0}
   m_LocalPosition: {x: -0.594, y: 0.509, z: 3.877}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
@@ -217,7 +218,7 @@ Transform:
   - {fileID: 5580739286426742165}
   - {fileID: 4307380489081375449}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -180}
 --- !u!33 &4067187862066763548
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -275,6 +276,29 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &3368306672657125614
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2726004319672688661}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.004084572
+  m_Height: 0.008169145
+  m_Direction: 2
+  m_Center: {x: -3.853877e-27, y: 0, z: -0.001}
 --- !u!1 &4017579338491130200
 GameObject:
   m_ObjectHideFlags: 0

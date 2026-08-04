@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23fb573ca98336c478797c70f59ae1e0, type: 3}
   m_Name: Pyramid
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  itemName: Pyramid
-  icon: {fileID: 0}
-  pickupMessage: You got a Pyramid
-  isStackable: 1
+  ItemName: Pyramid
+  ID: 3
+  Icon: {fileID: 0}
+  IsStackable: 1
   category: 0
-  description: A simple Pyramid
+  PickupMessage: 
+  Description: 

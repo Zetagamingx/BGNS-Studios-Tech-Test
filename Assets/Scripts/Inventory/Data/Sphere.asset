@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23fb573ca98336c478797c70f59ae1e0, type: 3}
   m_Name: Sphere
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  itemName: Sphere
-  icon: {fileID: 0}
-  pickupMessage: You Got a Sphere
-  isStackable: 0
+  ItemName: Sphere
+  ID: 2
+  Icon: {fileID: 0}
+  IsStackable: 1
   category: 0
-  description: A simple Sphere
+  PickupMessage: 
+  Description: 

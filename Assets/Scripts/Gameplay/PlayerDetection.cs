@@ -2,36 +2,24 @@ using UnityEngine;
 
 public class PlayerDetection : MonoBehaviour
 {
-    public IInteract currentInteract {  get; private set; }
-
-    public IPickUp currentPickUp {  get; private set; }
+    public IInteract CurrentInteract { get; private set; }
 
     private void OnTriggerEnter(Collider other)
     {
-        IInteract interact = other.GetComponent<IInteract>();
-        IPickUp pickUp = other.GetComponent<IPickUp>();
-
-        if (interact != null)
+        if (other.TryGetComponent<IInteract>(out var interact))
         {
-            currentInteract = interact;
+            CurrentInteract = interact;
+            //Debug.Log($"Assigned: {CurrentInteract}");
         }
 
-        if (pickUp != null)
-        {
-            currentPickUp = pickUp;
-        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.GetComponent<IInteract>() == currentInteract)
+        if(other.TryGetComponent<IInteract>(out var interact) && interact == CurrentInteract)
         {
-            currentInteract = null;
+            CurrentInteract = null;
         }
 
-        if(other.GetComponent <IPickUp>() == currentPickUp)
-        {
-            currentPickUp = null;
-        }
     }
 }

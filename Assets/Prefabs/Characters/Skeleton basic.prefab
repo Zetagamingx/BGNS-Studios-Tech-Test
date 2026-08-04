@@ -71,6 +71,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 331b6fc89875606459e8164811e3973a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4872788410387338077}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 331b6fc89875606459e8164811e3973a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5193770516565640616}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 331b6fc89875606459e8164811e3973a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7035323131787430965}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 331b6fc89875606459e8164811e3973a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4707759024302992356}
   m_SourcePrefab: {fileID: 100100000, guid: 331b6fc89875606459e8164811e3973a, type: 3}
 --- !u!1 &6167636822900133906 stripped
 GameObject:
@@ -177,3 +186,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimatorController
   animator: {fileID: 531795435645888022}
+--- !u!114 &5193770516565640616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6167636822900133906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71ef4b4874f9b1a438ed3bbf9b6610eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCameraController
+  mouseSensivity: 3
+  lookAction: {fileID: -5630151704836100654, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+--- !u!114 &7035323131787430965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6167636822900133906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de05e337fc61cd6419e8db711c2c0895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDetection
+--- !u!114 &4707759024302992356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6167636822900133906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b056f3acad5f0e04990fb3a0887debdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
+  interactAction: {fileID: 1781555164194001046, guid: 052faaac586de48259a63d0c4782560b, type: 3}

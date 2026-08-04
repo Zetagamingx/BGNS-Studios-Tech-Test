@@ -9,11 +9,18 @@ public enum ItemCategory
 public class ItemData : ScriptableObject
 {
     [Header("Basic Info")]
-    public string itemName;
-    public Sprite icon;
-    public string pickupMessage;
-    public bool isStackable = true;
+    public string ItemName;
+    public int ID;
+    public Sprite Icon;
+
+    [Header("Inventory")]
+    public bool IsStackable = true;
     public ItemCategory category;
-    [TextArea] public string description;
+
+    [Header("UI")]
+    public string PickupMessage;
+
+    [TextArea] 
+    public string Description;
 
 }

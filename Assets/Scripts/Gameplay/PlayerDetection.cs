@@ -9,7 +9,7 @@ public class PlayerDetection : MonoBehaviour
         if (other.TryGetComponent<IInteract>(out var interact))
         {
             CurrentInteract = interact;
-            //Debug.Log($"Assigned: {CurrentInteract}");
+            Debug.Log($"Assigned: {CurrentInteract}");
         }
 
     }

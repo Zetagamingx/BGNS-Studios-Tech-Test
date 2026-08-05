@@ -46,7 +46,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 6cffe09ff226ac04d8c8900f7cf04168, type: 2}
+  m_Motion: {fileID: 7400000, guid: 939136e110756f849bd443c4b121c9e1, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -137,7 +137,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Skeleton Anim Controller
+  m_Name: MaroMart
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -151,7 +151,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 373adb43b5dd2264bb7b435d0816b792, type: 2}
+  m_Motion: {fileID: 7400000, guid: 10278ab4662fc464f90767b2312dbec9, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

@@ -1,8 +1,54 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class UIInventorySlot : MonoBehaviour, IDropHandler
 {
+    [Header("UI")]
+    [SerializeField] private Image iconImage;
+    [SerializeField] private TMPro.TextMeshProUGUI quantityText;
+
+    private PlayerInventory playerInventory;
+    private InventoryUIController inventoryUIController;
+
+    public int SlotIndex { get; set; }
+
+    private void Awake()
+    {
+        playerInventory = FindFirstObjectByType<PlayerInventory>();
+        inventoryUIController = FindFirstObjectByType<InventoryUIController>();
+    }
+
+    public void Refresh(InventorySlot slot)
+    {
+        if (slot.IsEmpty)
+        {
+            iconImage.enabled = false;
+            quantityText.gameObject.SetActive(false);
+            return;
+        }
+
+        iconImage.enabled = true;
+        iconImage.sprite = slot.item.Icon;
+
+        if (slot.quantity > 1)
+        {
+            quantityText.gameObject.SetActive(true);
+            quantityText.text = slot.quantity.ToString();
+        }
+        else
+        {
+            quantityText.gameObject.SetActive(false);
+        }
+
+    }
+
+    public void Clear()
+    {
+        iconImage.enabled = false;
+        quantityText.gameObject.SetActive(false);
+    }
+
     public void OnDrop(PointerEventData eventData)
     {
         UIDragItem draggedItem = eventData.pointerDrag.GetComponent<UIDragItem>();
@@ -10,19 +56,8 @@ public class UIInventorySlot : MonoBehaviour, IDropHandler
         if (draggedItem == null)
             return;
 
-        UIDragItem targetItem = GetComponentInChildren<UIDragItem>();
+        playerInventory.SwapSlots(draggedItem.SlotIndex, SlotIndex);
 
-        //checks if slot already has another item for the swap.
-
-        if (targetItem != null && targetItem != draggedItem)
-        {
-            targetItem.transform.SetParent(draggedItem.OriginalParent, false);
-            targetItem.RectTransform.anchoredPosition = Vector2.zero;
-        }
-
-        draggedItem.transform.SetParent(draggedItem.transform, false);
-        draggedItem.RectTransform.anchoredPosition = Vector2.zero;
-
-        Debug.Log("Item Drop on" + gameObject.name);
+        inventoryUIController.RefreshInventory();
     }
 }

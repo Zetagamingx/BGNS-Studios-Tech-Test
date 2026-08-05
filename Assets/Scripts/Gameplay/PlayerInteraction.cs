@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerInteraction : MonoBehaviour
 {
     private PlayerDetection playerDetection;
-    [SerializeField] InputActionReference interactAction;
+    [SerializeField] public InputActionReference interactAction;
 
     private void Awake()
     {

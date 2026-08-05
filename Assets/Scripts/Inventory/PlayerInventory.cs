@@ -21,6 +21,15 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
+    public void SwapSlots(int fromIndex, int toIndex)
+    {
+        InventorySlot temp = Inventory[fromIndex];
+
+        Inventory[fromIndex] = Inventory[toIndex];
+
+        Inventory[toIndex] = temp;
+    }
+
     public bool AddItem(ItemData item, int amount)
     {
         //Debug.Log("Tried to add Item");

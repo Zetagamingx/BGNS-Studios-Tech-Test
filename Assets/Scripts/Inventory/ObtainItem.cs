@@ -48,6 +48,7 @@ public class ObtainItem : MonoBehaviour, IInteract,IPickUp
             return;
         }
 
+        FindFirstObjectByType<InventoryUIController>().RefreshInventory();
         objectCollider.enabled = false;
         gameObject.SetActive(false);
     }

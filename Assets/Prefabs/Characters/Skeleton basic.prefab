@@ -99,6 +99,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 331b6fc89875606459e8164811e3973a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 625581942041719472}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 331b6fc89875606459e8164811e3973a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2514001148568844966}
   m_SourcePrefab: {fileID: 100100000, guid: 331b6fc89875606459e8164811e3973a, type: 3}
 --- !u!1 &6167636822900133906 stripped
 GameObject:
@@ -256,3 +259,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6677e9db64f505468fcd04d4afb0d3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputManagerController
+--- !u!114 &2514001148568844966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6167636822900133906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c4a5602197535c4b87754c67d269c25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
+  maxSlots: 6

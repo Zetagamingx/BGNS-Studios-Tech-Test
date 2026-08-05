@@ -7,6 +7,7 @@ public class NPCInteraction : MonoBehaviour, IInteract
     [SerializeField] private NPCRewardSystem npcRewardSystem;
 
     [SerializeField] private PlayerMovementController playerMovementController;
+    [SerializeField] private PlayerCameraController playerCameraController;
     [SerializeField] private PlayerInteraction playerInteraction;
 
     [SerializeField] private DialogueButtonController dialogueButtonController;
@@ -26,6 +27,7 @@ public class NPCInteraction : MonoBehaviour, IInteract
     public void Interact()
     {
         playerMovementController.moveAction.action.Disable();
+        playerCameraController.lookAction.action.Disable();
 
         dialogueButtonController.npcInteraction = this;
         dialogueButtonController.StartConversation();
@@ -45,6 +47,7 @@ public class NPCInteraction : MonoBehaviour, IInteract
         npcRewardSystem.GiveReward();
         npcRewardSystem.correctAnswers = 0;
         playerMovementController.moveAction.action.Enable();
+        playerCameraController.lookAction.action.Enable();
         playerInteraction.ClearInteraction();
 
         capsuleCollider.enabled = false;

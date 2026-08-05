@@ -512,10 +512,10 @@ RectTransform:
   - {fileID: 1156264755}
   m_Father: {fileID: 1225859720}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 740, y: -100}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &150700921
 CanvasRenderer:
@@ -3022,10 +3022,10 @@ RectTransform:
   - {fileID: 43951255}
   m_Father: {fileID: 1225859720}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1180, y: -100}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &890611879
 CanvasRenderer:
@@ -3159,6 +3159,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1818239791}
     - target: {fileID: 6248652144433409940, guid: f0e89e67370efcd429d792f9ab981d06, type: 3}
+      propertyPath: playerCameraController
+      value: 
+      objectReference: {fileID: 1601300422}
+    - target: {fileID: 6248652144433409940, guid: f0e89e67370efcd429d792f9ab981d06, type: 3}
       propertyPath: dialogueButtonController
       value: 
       objectReference: {fileID: 1213615832}
@@ -3210,6 +3214,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7949440051257902282, guid: f0e89e67370efcd429d792f9ab981d06, type: 3}
+      propertyPath: rewardTwo
+      value: 
+      objectReference: {fileID: 949713956125875965, guid: 3a86511e78970b54eb33617466280817, type: 3}
     - target: {fileID: 7949440051257902282, guid: f0e89e67370efcd429d792f9ab981d06, type: 3}
       propertyPath: rewardOnePopUpLocation
       value: 
@@ -3795,7 +3803,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1230018811
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4151,6 +4159,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 296312643}
     - target: {fileID: 6248652144433409940, guid: f0e89e67370efcd429d792f9ab981d06, type: 3}
+      propertyPath: playerCameraController
+      value: 
+      objectReference: {fileID: 1601300422}
+    - target: {fileID: 6248652144433409940, guid: f0e89e67370efcd429d792f9ab981d06, type: 3}
       propertyPath: dialogueButtonController
       value: 
       objectReference: {fileID: 1213615832}
@@ -4438,6 +4450,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87ffd3e11785b94b90eee10553a8b2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovementController
+--- !u!114 &1601300422 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5193770516565640616, guid: 656010dc486276845bdd0e21740151cc, type: 3}
+  m_PrefabInstance: {fileID: 439277421848602190}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71ef4b4874f9b1a438ed3bbf9b6610eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCameraController
+--- !u!114 &1601300425 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2514001148568844966, guid: 656010dc486276845bdd0e21740151cc, type: 3}
+  m_PrefabInstance: {fileID: 439277421848602190}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c4a5602197535c4b87754c67d269c25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
 --- !u!1 &1608193307
 GameObject:
   m_ObjectHideFlags: 0
@@ -5013,6 +5047,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorCube
       objectReference: {fileID: 0}
+    - target: {fileID: 8832779689696694455, guid: 5935f0e5b6a328d4782b4e9294fd8a69, type: 3}
+      propertyPath: requiredKey
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f95b675f6ca2b34395bd073853258dc, type: 2}
+    - target: {fileID: 8832779689696694455, guid: 5935f0e5b6a328d4782b4e9294fd8a69, type: 3}
+      propertyPath: playerInventory
+      value: 
+      objectReference: {fileID: 1601300425}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5376,10 +5418,10 @@ RectTransform:
   - {fileID: 1638001588}
   m_Father: {fileID: 1225859720}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 960, y: -100}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2036015146
 CanvasRenderer:
@@ -5631,6 +5673,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b0a60a9e0b73f4eb06db25ad39cbc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObtainItem
+  playerInventory: {fileID: 0}
+  playerInteraction: {fileID: 0}
   itemData: {fileID: 11400000, guid: 8f95b675f6ca2b34395bd073853258dc, type: 2}
   quantity: 1
 --- !u!1 &2107458719
@@ -5729,6 +5773,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 616693890}
     m_Modifications:
+    - target: {fileID: 2964430935294482438, guid: 2fc024adc83046c4ab9ce081fe86b9b0, type: 3}
+      propertyPath: requiredKey
+      value: 
+      objectReference: {fileID: 11400000, guid: 71ff1f6ae15c18a46b50e65ad4486b42, type: 2}
+    - target: {fileID: 2964430935294482438, guid: 2fc024adc83046c4ab9ce081fe86b9b0, type: 3}
+      propertyPath: playerInventory
+      value: 
+      objectReference: {fileID: 1601300425}
     - target: {fileID: 7254784453924492712, guid: 2fc024adc83046c4ab9ce081fe86b9b0, type: 3}
       propertyPath: m_Name
       value: DoorPyramid
@@ -5786,6 +5838,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2514001148568844966, guid: 656010dc486276845bdd0e21740151cc, type: 3}
+      propertyPath: inventory.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6167636822900133906, guid: 656010dc486276845bdd0e21740151cc, type: 3}
       propertyPath: m_Name
       value: Skeleton basic
@@ -5843,6 +5899,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 616693890}
     m_Modifications:
+    - target: {fileID: 6163044124079451854, guid: 7951b852c81ffaf4e95918ff2e6923bd, type: 3}
+      propertyPath: requiredKey
+      value: 
+      objectReference: {fileID: 11400000, guid: 6332c5205656d0444a02dca082f0a8d8, type: 2}
+    - target: {fileID: 6163044124079451854, guid: 7951b852c81ffaf4e95918ff2e6923bd, type: 3}
+      propertyPath: playerInventory
+      value: 
+      objectReference: {fileID: 1601300425}
     - target: {fileID: 6478587665749612082, guid: 7951b852c81ffaf4e95918ff2e6923bd, type: 3}
       propertyPath: m_Name
       value: DoorSphere
@@ -5940,6 +6004,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5955307635186589649, guid: 8be38ca08911a924ea72d1107b987d47, type: 3}
+      propertyPath: playerInventory
+      value: 
+      objectReference: {fileID: 1601300425}
+    - target: {fileID: 5955307635186589649, guid: 8be38ca08911a924ea72d1107b987d47, type: 3}
+      propertyPath: playerInteraction
+      value: 
+      objectReference: {fileID: 1601300412}
     - target: {fileID: 8882565415281166435, guid: 8be38ca08911a924ea72d1107b987d47, type: 3}
       propertyPath: m_Name
       value: SphereKeyParent
@@ -6081,6 +6153,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1134828957560771800, guid: a71613310dc81f94cba282eaf8996e35, type: 3}
+      propertyPath: playerInventory
+      value: 
+      objectReference: {fileID: 1601300425}
+    - target: {fileID: 1134828957560771800, guid: a71613310dc81f94cba282eaf8996e35, type: 3}
+      propertyPath: playerInteraction
+      value: 
+      objectReference: {fileID: 1601300412}
     - target: {fileID: 6489474654353363394, guid: a71613310dc81f94cba282eaf8996e35, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6178,6 +6258,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7108803628161171851, guid: 205589d753e834149855fe122683fb3a, type: 3}
+      propertyPath: playerInventory
+      value: 
+      objectReference: {fileID: 1601300425}
+    - target: {fileID: 7108803628161171851, guid: 205589d753e834149855fe122683fb3a, type: 3}
+      propertyPath: playerInteraction
+      value: 
+      objectReference: {fileID: 1601300412}
     - target: {fileID: 8997830624769095452, guid: 205589d753e834149855fe122683fb3a, type: 3}
       propertyPath: m_Name
       value: PyramidKeyParent
@@ -6239,6 +6327,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 909139102422167940, guid: 87544d0a6e686e440a41083b3ea37186, type: 3}
+      propertyPath: requiredKey
+      value: 
+      objectReference: {fileID: 11400000, guid: 4a336a8f2b974994292de9c3dec5902e, type: 2}
+    - target: {fileID: 909139102422167940, guid: 87544d0a6e686e440a41083b3ea37186, type: 3}
+      propertyPath: playerInventory
+      value: 
+      objectReference: {fileID: 1601300425}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6268,6 +6364,10 @@ PrefabInstance:
       propertyPath: dialogueConversation
       value: 
       objectReference: {fileID: 296312643}
+    - target: {fileID: 6248652144433409940, guid: f0e89e67370efcd429d792f9ab981d06, type: 3}
+      propertyPath: playerCameraController
+      value: 
+      objectReference: {fileID: 1601300422}
     - target: {fileID: 6248652144433409940, guid: f0e89e67370efcd429d792f9ab981d06, type: 3}
       propertyPath: dialogueButtonController
       value: 
@@ -6320,6 +6420,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7949440051257902282, guid: f0e89e67370efcd429d792f9ab981d06, type: 3}
+      propertyPath: rewardTwo
+      value: 
+      objectReference: {fileID: 8753095891664785100, guid: abf13b8d513b0254d9c0e2f673064df9, type: 3}
     - target: {fileID: 7949440051257902282, guid: f0e89e67370efcd429d792f9ab981d06, type: 3}
       propertyPath: rewardOnePopUpLocation
       value: 

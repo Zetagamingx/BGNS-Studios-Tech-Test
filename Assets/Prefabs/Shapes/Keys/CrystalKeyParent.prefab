@@ -67,7 +67,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b0a60a9e0b73f4eb06db25ad39cbc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObtainItem
-  itemData: {fileID: 0}
+  playerInventory: {fileID: 0}
+  playerInteraction: {fileID: 0}
+  itemData: {fileID: 11400000, guid: 4a336a8f2b974994292de9c3dec5902e, type: 2}
   quantity: 1
 --- !u!1 &7805663816159862350
 GameObject:

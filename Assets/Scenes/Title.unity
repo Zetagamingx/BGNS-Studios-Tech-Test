@@ -395,6 +395,7 @@ GameObject:
   - component: {fileID: 160887764}
   - component: {fileID: 160887763}
   - component: {fileID: 160887762}
+  - component: {fileID: 160887765}
   m_Layer: 5
   m_Name: Action
   m_TagString: Untagged
@@ -437,7 +438,7 @@ MonoBehaviour:
   normalColor: {r: 1, g: 1, b: 1, a: 0}
   highlightedColor: {r: 1, g: 0.7162376, b: 0.4235294, a: 0.8784314}
   pressedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  useScaleEffect: 1
+  useScaleEffect: 0
   highlightedScale: 1.1
 --- !u!114 &160887763
 MonoBehaviour:
@@ -478,6 +479,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 160887760}
   m_CullTransparentMesh: 1
+--- !u!114 &160887765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160887760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18b42fad15ada87468f18b9a228c2bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LoadGameButtonController
+  visual: {fileID: 160887762}
+  saveManager: {fileID: 0}
+  pauseMenuController: {fileID: 0}
 --- !u!1 &272800659
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,6 +631,7 @@ GameObject:
   - component: {fileID: 493786560}
   - component: {fileID: 493786559}
   - component: {fileID: 493786558}
+  - component: {fileID: 493786562}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -705,6 +722,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &493786562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493786557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44275df58b9dea6459a4a494175787cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TitleStarter
 --- !u!1 &659343448
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,6 +745,7 @@ GameObject:
   - component: {fileID: 659343451}
   - component: {fileID: 659343450}
   - component: {fileID: 659343449}
+  - component: {fileID: 659343452}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -797,6 +827,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &659343452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659343448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+  m_Version: 2
 --- !u!1 &881389356
 GameObject:
   m_ObjectHideFlags: 0
@@ -1615,8 +1689,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a920c4b81e160e242a790ad713bf778b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  musicSounds: []
-  sfxSounds: []
+  musicSounds:
+  - name: Cemetery
+    clip: {fileID: 8300000, guid: b689201d566781c4cbc00711f07be0c5, type: 3}
+  - name: Title
+    clip: {fileID: 8300000, guid: 2b8c23e3aa02d3c4f8fad013252ccbb8, type: 3}
+  - name: EndScreen
+    clip: {fileID: 8300000, guid: 7d482207d8f842d42beaeca5cec4e27f, type: 3}
+  sfxSounds:
+  - name: 
+    clip: {fileID: 0}
+  - name: Step
+    clip: {fileID: 8300000, guid: 29319eb5ba1a444479842302fd2eedcb, type: 3}
+  - name: Selected
+    clip: {fileID: 8300000, guid: 1d5bab3f56fba8045b908fa4b82f0526, type: 3}
+  - name: PickUp
+    clip: {fileID: 8300000, guid: 05ec6b0992ff90143bd92b8840bff624, type: 3}
+  - name: Wrong
+    clip: {fileID: 8300000, guid: 7b8edbbc73e226a4f88e6c9a7c3e77a1, type: 3}
+  - name: Correct
+    clip: {fileID: 8300000, guid: 0aaa9304d699ad34fb3739532fcf2aa3, type: 3}
+  - name: Confirm
+    clip: {fileID: 8300000, guid: 4b1ec90595842b74d9ec130fc29d6c7a, type: 3}
+  - name: Confirm
+    clip: {fileID: 8300000, guid: 4b1ec90595842b74d9ec130fc29d6c7a, type: 3}
   musicSource: {fileID: 1083077251649641921}
   sfxSources: {fileID: 4881781589692735980}
 --- !u!1 &1799686334
@@ -1923,7 +2019,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.077
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2069,7 +2165,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.675
   m_Pitch: 1
   Loop: 0
   Mute: 0

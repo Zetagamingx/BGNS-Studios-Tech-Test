@@ -24,6 +24,8 @@ public class AudioManager : MonoBehaviour
         }    
     }
 
+   
+
     public void PlayMusic(string name)
     {
         SoundData musicSound = Array.Find(musicSounds, x => x.name == name);

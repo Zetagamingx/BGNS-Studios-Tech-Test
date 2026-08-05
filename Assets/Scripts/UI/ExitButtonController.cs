@@ -21,6 +21,7 @@ public class ExitButtonController : BasicClickController, IUISelectable
     public void OnSelected()
     {
         visual.SetHighlighted(true);
+        AudioManager.Instance.PlaySfx("Selected");
     }
 
     public void OnSubmit()
@@ -30,12 +31,9 @@ public class ExitButtonController : BasicClickController, IUISelectable
 
     protected override void OnClick()
     {
+        AudioManager.Instance.PlaySfx("Confirm");
         Application.Quit();
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-    Application.Quit();
-#endif
+
     }
 
 

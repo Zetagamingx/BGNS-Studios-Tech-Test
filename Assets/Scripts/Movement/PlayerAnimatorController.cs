@@ -1,8 +1,7 @@
-using System;
-using UnityEditor.Animations;
+
 using UnityEngine;
 
-[RequireComponent (typeof(AnimatorController))]
+[RequireComponent(typeof(Animator))]
 public class PlayerAnimatorController : MonoBehaviour
 {
     [SerializeField] Animator animator;

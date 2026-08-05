@@ -44,6 +44,8 @@ public class DialogueButtonController : BasicClickController, IUISelectable
 
     protected override void OnClick()
     {
+        AudioManager.Instance.PlaySfx("Confirm");
+
         if (questionsAsked < maxQuestions &&
             questionNumber < question.Count)
         {
@@ -69,6 +71,7 @@ public class DialogueButtonController : BasicClickController, IUISelectable
 
     public void OnSelected()
     {
+        AudioManager.Instance.PlaySfx("Selected");
         Debug.Log("DialogueSelectionButton is selected");
         visual.SetHighlighted(true);
     }

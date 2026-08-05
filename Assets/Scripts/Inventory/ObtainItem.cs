@@ -40,6 +40,7 @@ public class ObtainItem : MonoBehaviour, IInteract,IPickUp
     private void PickUpItem()
     {
         playerInteraction.ClearInteraction();
+        AudioManager.Instance.PlaySfx("PickUp");
         bool added = playerInventory.AddItem(itemData, quantity);
 
         if (!added)

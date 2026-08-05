@@ -22,6 +22,7 @@ public class PlayerMovementController : MonoBehaviour
 
     public void OnEnable()
     {
+        AudioManager.Instance.PlayMusic("Cemetery");
         moveAction.action.Enable();
     }
 
@@ -38,6 +39,7 @@ public class PlayerMovementController : MonoBehaviour
 
         if (isWalking != wasWalking)
         {
+            AudioManager.Instance.PlaySfx("Step");
             animController.SetWalkingState(isWalking);
             wasWalking = isWalking;
         }

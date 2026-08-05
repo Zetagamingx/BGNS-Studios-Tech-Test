@@ -23,6 +23,7 @@ public class AnswerTwoButtonController : BasicClickController, IUISelectable
     }
     protected override void OnClick()
     {
+        AudioManager.Instance.PlaySfx("Wrong");
         conversationSelectionModel.ShowSection(SectionToActivate);
         dialogueTextMeshPro.SetText(response);
         //AudioManager.Instance.PlaySfx("emptybottlebump");
@@ -35,6 +36,7 @@ public class AnswerTwoButtonController : BasicClickController, IUISelectable
 
     public void OnSelected()
     {
+        AudioManager.Instance.PlaySfx("Selected");
         Debug.Log($"DialogueSelectionButton is selected");
         visual.SetHighlighted(true);
     }

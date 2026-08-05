@@ -21,6 +21,7 @@ public class StartGameButtonController : BasicClickController, IUISelectable
     public void OnSelected()
     {
         visual.SetHighlighted(true);
+        AudioManager.Instance.PlaySfx("Selected");
     }
 
     public void OnSubmit()
@@ -31,6 +32,7 @@ public class StartGameButtonController : BasicClickController, IUISelectable
     protected override void OnClick()
     {
         Debug.Log("Start button clicked.");
+        AudioManager.Instance.PlaySfx("Confirm");
         SceneManager.LoadScene(1);
     }
 }

@@ -6,6 +6,8 @@ public class PlayerInventory : MonoBehaviour
 {
     [SerializeField] private RecipeDatabase recipeDatabase;
 
+    [SerializeField] private ItemDatabase itemDatabase;
+
     [SerializeField] private int maxSlots = 30;
 
     [SerializeField] private List<InventorySlot> inventory = new();
@@ -192,6 +194,52 @@ public class PlayerInventory : MonoBehaviour
         return false;
     }
 
+    public void LoadInventoryData(InventoryData data)
+    {
+        // Clear current inventory
+        foreach (InventorySlot slot in inventory)
+        {
+            slot.Clear();
+        }
+
+        // Restore saved items
+        foreach (InventorySlotData slotData in data.slots)
+        {
+            ItemData item = itemDatabase.GetItemByID(slotData.itemID);
+
+            if (item != null)
+            {
+                inventory[slotData.slotIndex].item = item;
+                inventory[slotData.slotIndex].quantity = slotData.quantity;
+            }
+        }
+
+        FindFirstObjectByType<InventoryUIController>().RefreshInventory();
+
+        PrintInventory();
+    }
+
+    public InventoryData GetInventoryData()
+    {
+        InventoryData data = new InventoryData();
+
+        for (int i = 0; i < inventory.Count; i++)
+        {
+            InventorySlot slot = inventory[i];
+
+            if (slot.IsEmpty)
+                continue;
+
+            data.slots.Add(new InventorySlotData
+            {
+                slotIndex = i,
+                itemID = slot.item.ID,
+                quantity = slot.quantity
+            });
+        }
+
+        return data;
+    }
     public void PrintInventory()
     {
         Debug.Log("===== INVENTORY =====");

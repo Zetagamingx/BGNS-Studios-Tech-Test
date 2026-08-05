@@ -35,6 +35,7 @@ public class ItemDialogueButtonController : BasicClickController, IUISelectable
 
     protected override void OnClick()
     {
+        AudioManager.Instance.PlayMusic("EndScreen");
         gameEndContainer.SetActive(true);
         itemDialogueContainer.SetActive(false);
     }

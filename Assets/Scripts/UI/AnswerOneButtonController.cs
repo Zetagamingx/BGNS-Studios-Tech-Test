@@ -24,6 +24,7 @@ public class AnswerOneButtonController : BasicClickController, IUISelectable
     }
     protected override void OnClick()
     {
+        AudioManager.Instance.PlaySfx("Correct");
         npcRewardSystem.correctAnswers++;
         conversationSelectionModel.ShowSection(SectionToActivate);
         dialogueTextMeshPro.SetText(response);
@@ -37,7 +38,7 @@ public class AnswerOneButtonController : BasicClickController, IUISelectable
 
     public void OnSelected()
     {
-        Debug.Log($"DialogueSelectionButton is selected");
+        AudioManager.Instance.PlaySfx("Selected");
         visual.SetHighlighted(true);
     }
 

@@ -16,6 +16,7 @@ public abstract class BasicClickController : MonoBehaviour,
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        Debug.Log("Pointer reached button");
         if (!buttonHelper.Interactable)
             return;
 

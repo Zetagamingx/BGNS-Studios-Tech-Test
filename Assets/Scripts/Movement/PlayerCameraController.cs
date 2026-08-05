@@ -1,13 +1,26 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerCameraController : MonoBehaviour
 {
     [SerializeField] private float mouseSensivity;
 
+
+
     private Rigidbody playerRb;
 
     public InputActionReference lookAction;
+
+    private void OnEnable()
+    {
+        lookAction.action.Enable();
+    }
+
+    private void OnDisable()
+    {
+        lookAction.action.Disable();
+    }
 
     private float yaw;
     void Start()

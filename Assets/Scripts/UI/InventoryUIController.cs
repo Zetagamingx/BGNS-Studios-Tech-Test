@@ -32,7 +32,6 @@ public class InventoryUIController : MonoBehaviour
 
             if (dragItem != null)
                 dragItem.SlotIndex = i;
-
             if (i < inventory.Count)
                 inventorySlots[i].Refresh(inventory[i]);
             else

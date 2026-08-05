@@ -98,9 +98,6 @@ PrefabInstance:
       addedObject: {fileID: 4707759024302992356}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 331b6fc89875606459e8164811e3973a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 625581942041719472}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 331b6fc89875606459e8164811e3973a, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2514001148568844966}
   m_SourcePrefab: {fileID: 100100000, guid: 331b6fc89875606459e8164811e3973a, type: 3}
 --- !u!1 &6167636822900133906 stripped
@@ -247,18 +244,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
   interactAction: {fileID: 1781555164194001046, guid: 052faaac586de48259a63d0c4782560b, type: 3}
---- !u!114 &625581942041719472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6167636822900133906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6677e9db64f505468fcd04d4afb0d3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InputManagerController
 --- !u!114 &2514001148568844966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,4 +256,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c4a5602197535c4b87754c67d269c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
+  recipeDatabase: {fileID: 11400000, guid: c4807e11d3c8e1b47abf58dbaf7e0045, type: 2}
   maxSlots: 6
+  inventory:
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0

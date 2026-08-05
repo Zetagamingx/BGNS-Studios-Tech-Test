@@ -6,6 +6,7 @@ public class DoorInteract : MonoBehaviour,IInteract
     [SerializeField] private GemAnimationController  gemAnimatorController;
 
     [SerializeField] private PlayerInventory playerInventory;
+    [SerializeField] private PlayerInteraction playerInteraction;
 
     [SerializeField] private ItemData requiredKey;
     [SerializeField] public int requiredAmount;
@@ -28,6 +29,7 @@ public class DoorInteract : MonoBehaviour,IInteract
             doorAnimatorController.OpenDoor();
             gemAnimatorController.FadeGem();
             playerInventory.RemoveItem(requiredKey, requiredAmount);
+            playerInteraction.ClearInteraction();
             interactCollider.enabled = false;
         }
         else

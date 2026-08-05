@@ -1,15 +1,46 @@
+using TMPro;
 using UnityEngine;
 
 public class NPCInteraction : MonoBehaviour, IInteract
 {
     [SerializeField] private NPCAnimationController npcAnimationController;
     [SerializeField] private NPCRewardSystem npcRewardSystem;
+
+    [SerializeField] private PlayerMovementController playerMovementController;
+
+    [SerializeField] private DialogueButtonController dialogueButtonController;
+    [SerializeField] private GameObject dialogueConversation;
+    [SerializeField] private AnswerOneButtonController answerOneButtonController;
+    [SerializeField] private TextMeshProUGUI textMeshPro;
+    [SerializeField] private string firstDialogue;
+
+    
     public string InteractionPrompt => throw new System.NotImplementedException();
 
+    
     public void Interact()
     {
+        playerMovementController.moveAction.action.Disable();
+
+        dialogueButtonController.npcInteraction = this;
+        dialogueButtonController.StartConversation();
+        answerOneButtonController.npcRewardSystem = GetComponent<NPCRewardSystem>();
         npcAnimationController.Talk();
-        npcRewardSystem.correctAnswers = 2;
+        dialogueConversation.SetActive(true);
+        textMeshPro.SetText(firstDialogue);
+        
+
+        
+    }
+
+    public void EndConversation()
+    {
+        dialogueConversation.SetActive(false);
+        npcAnimationController.StopTalk();
         npcRewardSystem.GiveReward();
+        npcRewardSystem.correctAnswers = 0;
+        playerMovementController.moveAction.action.Enable();
+
+        gameObject.SetActive (false);
     }
 }

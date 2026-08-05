@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 331b6fc89875606459e8164811e3973a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.82579124
+      value: 0.0034667235
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 331b6fc89875606459e8164811e3973a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00000028998028
+      value: 0.00000029802322
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 331b6fc89875606459e8164811e3973a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.87403756
+      value: 0.89805806
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 331b6fc89875606459e8164811e3973a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -96,6 +96,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 331b6fc89875606459e8164811e3973a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4707759024302992356}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 331b6fc89875606459e8164811e3973a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 625581942041719472}
   m_SourcePrefab: {fileID: 100100000, guid: 331b6fc89875606459e8164811e3973a, type: 3}
 --- !u!1 &6167636822900133906 stripped
 GameObject:
@@ -148,10 +151,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
-  m_Height: 1.1844544
+  m_Radius: 1.5
+  m_Height: 9.636245
   m_Direction: 1
-  m_Center: {x: 0, y: 0.59273183, z: 0}
+  m_Center: {x: 0, y: 5.2618814, z: 0}
 --- !u!114 &376777955676444022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71ef4b4874f9b1a438ed3bbf9b6610eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCameraController
-  mouseSensivity: 3
+  mouseSensivity: 0.7
   lookAction: {fileID: -5630151704836100654, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!114 &7035323131787430965
 MonoBehaviour:
@@ -241,3 +244,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
   interactAction: {fileID: 1781555164194001046, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+--- !u!114 &625581942041719472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6167636822900133906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6677e9db64f505468fcd04d4afb0d3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InputManagerController

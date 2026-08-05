@@ -133,6 +133,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCInteraction
   npcAnimationController: {fileID: 7243749128359792302}
   npcRewardSystem: {fileID: 7949440051257902282}
+  playerMovementController: {fileID: 0}
+  dialogueButtonController: {fileID: 0}
+  dialogueConversation: {fileID: 0}
+  answerOneButtonController: {fileID: 0}
+  textMeshPro: {fileID: 0}
+  firstDialogue: Answer two questions, if you get both correct, you get an extra
+    prize!
 --- !u!114 &7243749128359792302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCRewardSystem
   rewardOne: {fileID: 3425422804353082286, guid: 41489579a46c98c49a94e0ebf0a207dc, type: 3}
-  rewardTwo: {fileID: 8753095891664785100, guid: abf13b8d513b0254d9c0e2f673064df9, type: 3}
+  rewardTwo: {fileID: 949713956125875965, guid: 3a86511e78970b54eb33617466280817, type: 3}
   rewardOnePopUpLocation: {fileID: 0}
   rewardTwoPopUpLocation: {fileID: 0}
   correctAnswers: 0

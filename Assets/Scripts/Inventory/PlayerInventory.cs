@@ -1,12 +1,19 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerInventory : MonoBehaviour
 {
+    [SerializeField] private RecipeDatabase recipeDatabase;
+
     [SerializeField] private int maxSlots = 30;
 
     [SerializeField] private List<InventorySlot> inventory = new();
 
+    public InputActionReference combineAction;
+
+    private int firstSelectedSlot = -1;
+    private int secondSelectedSlot = -1;
     public List<InventorySlot> Inventory => inventory;
 
     
@@ -19,6 +26,18 @@ public class PlayerInventory : MonoBehaviour
         {
             inventory.Add(new InventorySlot(null, 0));
         }
+    }
+
+    public void OnEnable()
+    {
+        combineAction.action.Enable();
+        combineAction.action.performed += OnCombine;
+    }
+
+    public void OnDisable()
+    {
+        combineAction.action.performed -= OnCombine;
+        combineAction.action.Disable();
     }
 
     public void SwapSlots(int fromIndex, int toIndex)
@@ -85,6 +104,39 @@ public class PlayerInventory : MonoBehaviour
                 return true;
         }
 
+        return false;
+    }
+
+    private void OnCombine(InputAction.CallbackContext context)
+    {
+        TryCombineItems(0, 1);
+    }
+
+    public bool TryCombineItems(int firstSlot, int secondSlot)
+    {
+        ItemData itemA = Inventory[firstSlot].item;
+        ItemData itemB = Inventory[secondSlot].item;
+
+        foreach (ItemCombineRecipe recipe in recipeDatabase.allRecipes)
+        {
+            if ((recipe.inputA == itemA && recipe.inputB == itemB) 
+                
+                ||    
+                
+                (recipe.inputA == itemB && recipe.inputB == itemA))
+
+            {
+                Inventory[firstSlot] = new InventorySlot(recipe.result, 1);
+
+                Inventory[secondSlot].Clear();
+
+                PrintInventory();
+
+                FindFirstObjectByType<InventoryUIController>().RefreshInventory();
+
+                return true;
+            }
+        }
         return false;
     }
 

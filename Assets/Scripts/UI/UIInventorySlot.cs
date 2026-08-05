@@ -51,6 +51,8 @@ public class UIInventorySlot : MonoBehaviour, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
+        Debug.Log($"Dropped on slot {SlotIndex}");
+
         UIDragItem draggedItem = eventData.pointerDrag.GetComponent<UIDragItem>();
 
         if (draggedItem == null)

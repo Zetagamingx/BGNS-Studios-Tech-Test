@@ -9155,6 +9155,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2514001148568844966, guid: 656010dc486276845bdd0e21740151cc, type: 3}
+      propertyPath: combineAction
+      value: 
+      objectReference: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    - target: {fileID: 2514001148568844966, guid: 656010dc486276845bdd0e21740151cc, type: 3}
+      propertyPath: recipeDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: c4807e11d3c8e1b47abf58dbaf7e0045, type: 2}
+    - target: {fileID: 2514001148568844966, guid: 656010dc486276845bdd0e21740151cc, type: 3}
       propertyPath: inventory.Array.size
       value: 6
       objectReference: {fileID: 0}

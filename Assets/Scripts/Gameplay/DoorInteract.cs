@@ -8,6 +8,7 @@ public class DoorInteract : MonoBehaviour,IInteract
     [SerializeField] private PlayerInventory playerInventory;
 
     [SerializeField] private ItemData requiredKey;
+    [SerializeField] public int requiredAmount;
 
     private BoxCollider interactCollider;
     public string InteractionPrompt => throw new System.NotImplementedException();
@@ -22,18 +23,16 @@ public class DoorInteract : MonoBehaviour,IInteract
     }
     public void Interact()
     {
-        if (playerInventory.HasItem(requiredKey))
+        if (playerInventory.HasItem(requiredKey, requiredAmount))
         {
             doorAnimatorController.OpenDoor();
             gemAnimatorController.FadeGem();
+            playerInventory.RemoveItem(requiredKey, requiredAmount);
             interactCollider.enabled = false;
         }
         else
         {
-            Debug.Log("You need the key.");
+            Debug.Log($"You need {requiredAmount} {requiredKey.ItemName}.");
         }
-        
     }
-
-    
 }

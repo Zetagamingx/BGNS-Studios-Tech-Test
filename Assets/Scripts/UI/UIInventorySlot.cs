@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class UIInventorySlot : MonoBehaviour, IDropHandler
+public class UIInventorySlot : MonoBehaviour, IDropHandler, IPointerClickHandler
 {
     [Header("UI")]
     [SerializeField] private Image iconImage;
@@ -61,5 +61,15 @@ public class UIInventorySlot : MonoBehaviour, IDropHandler
         playerInventory.SwapSlots(draggedItem.SlotIndex, SlotIndex);
 
         inventoryUIController.RefreshInventory();
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Debug.Log($"Clicked slot {SlotIndex}");
+
+        if (eventData.button == PointerEventData.InputButton.Right)
+        {
+            playerInventory.SelectSlotForCombination(SlotIndex);
+        }
     }
 }

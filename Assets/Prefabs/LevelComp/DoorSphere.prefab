@@ -292,6 +292,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoorInteract
   doorAnimatorController: {fileID: 311770137712032609}
   gemAnimatorController: {fileID: 7916451704222083698}
+  playerInventory: {fileID: 0}
+  requiredKey: {fileID: 11400000, guid: 6332c5205656d0444a02dca082f0a8d8, type: 2}
+  requiredAmount: 1
 --- !u!1 &4995886988161170523
 GameObject:
   m_ObjectHideFlags: 0

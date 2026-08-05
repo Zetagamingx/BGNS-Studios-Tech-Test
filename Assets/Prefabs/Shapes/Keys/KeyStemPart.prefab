@@ -67,6 +67,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b0a60a9e0b73f4eb06db25ad39cbc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObtainItem
+  playerInventory: {fileID: 0}
+  playerInteraction: {fileID: 0}
   itemData: {fileID: 11400000, guid: 9675f05eb18b08046818357748e8d74d, type: 2}
   quantity: 1
 --- !u!1001 &8922438575750041962
@@ -120,7 +122,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 628b03bc6e2362045967ba58e1f5070c, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 28e316a59b068b1469f0e97b4dd36874, type: 2}
+      objectReference: {fileID: 2100000, guid: 40a57292616f25045915dff2dbae7b42, type: 2}
     - target: {fileID: 919132149155446097, guid: 628b03bc6e2362045967ba58e1f5070c, type: 3}
       propertyPath: m_Name
       value: CrystalKeyStem

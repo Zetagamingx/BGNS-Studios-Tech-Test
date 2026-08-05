@@ -10,11 +10,20 @@ public class PlayerInventory : MonoBehaviour
 
     [SerializeField] private List<InventorySlot> inventory = new();
 
-    public InputActionReference combineAction;
+   
 
     private int firstSelectedSlot = -1;
     private int secondSelectedSlot = -1;
+
+    private bool combineMode;
+
+    public bool IsCombineMode => combineMode;
+    public bool IsCombining => firstSelectedSlot != -1;
+
     public List<InventorySlot> Inventory => inventory;
+
+
+
 
     
 
@@ -28,17 +37,9 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    public void OnEnable()
-    {
-        combineAction.action.Enable();
-        combineAction.action.performed += OnCombine;
-    }
+    
 
-    public void OnDisable()
-    {
-        combineAction.action.performed -= OnCombine;
-        combineAction.action.Disable();
-    }
+   
 
     public void SwapSlots(int fromIndex, int toIndex)
     {
@@ -91,27 +92,78 @@ public class PlayerInventory : MonoBehaviour
                 if (slot.quantity <= 0)
                     slot.Clear();
 
+                FindFirstObjectByType<InventoryUIController>().RefreshInventory();
+
                 return;
             }
         }
     }
 
-    public bool HasItem(ItemData item)
+    public bool HasItem(ItemData item, int amount)
     {
         foreach (InventorySlot slot in inventory)
         {
-            if (!slot.IsEmpty && slot.item == item)
+            if (!slot.IsEmpty &&
+                slot.item == item &&
+                slot.quantity >= amount)
+            {
                 return true;
+            }
         }
 
         return false;
     }
 
-    private void OnCombine(InputAction.CallbackContext context)
+    public int ItemInventorySlot(ItemData item)
     {
-        TryCombineItems(0, 1);
+        for (int i = 0; i < Inventory.Count; i++)
+        {
+            if (!Inventory[i].IsEmpty && Inventory[i].item == item)
+            {
+                return i;
+            }
+        }
+
+        return -1;
     }
 
+    public void BeginCombineMode()
+    {
+        combineMode = true;
+        firstSelectedSlot = -1;
+        secondSelectedSlot = -1;
+    }
+
+    public void EndCombineMode()
+    {
+        combineMode = false;
+        firstSelectedSlot = -1;
+        secondSelectedSlot = -1;
+    }
+
+    public void BeginCombineMode(int slotIndex)
+    {
+        firstSelectedSlot = slotIndex;
+    }
+
+    public void SelectSlotForCombination(int slotIndex)
+    {
+        if (!combineMode)
+            return;
+
+        if (firstSelectedSlot == -1)
+        {
+            firstSelectedSlot = slotIndex;
+            Debug.Log($"First slot: {slotIndex}");
+            return;
+        }
+
+        secondSelectedSlot = slotIndex;
+
+        TryCombineItems(firstSelectedSlot, secondSelectedSlot);
+
+        EndCombineMode();
+    }
     public bool TryCombineItems(int firstSlot, int secondSlot)
     {
         ItemData itemA = Inventory[firstSlot].item;

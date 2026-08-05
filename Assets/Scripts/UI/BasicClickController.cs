@@ -19,7 +19,20 @@ public abstract class BasicClickController : MonoBehaviour,
         if (!buttonHelper.Interactable)
             return;
 
-        OnClick();
+        switch (eventData.button)
+        {
+            case PointerEventData.InputButton.Left:
+                OnClick();
+                break;
+
+            case PointerEventData.InputButton.Right:
+                OnRightClick();
+                break;
+        }
+    }
+
+    protected virtual void OnRightClick()
+    {
     }
 
     public void OnPointerEnter(PointerEventData eventData)

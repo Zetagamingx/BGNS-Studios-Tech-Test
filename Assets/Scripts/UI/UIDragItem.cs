@@ -2,8 +2,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(CanvasGroup))]
-public class UIDragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class UIDragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
+    [SerializeField] private PlayerInventory playerInventory;
+    [SerializeField] private UIInventorySlot inventorySlot;
+
     public int SlotIndex { get; set; }
 
     private RectTransform rectTransform;
@@ -19,6 +22,12 @@ public class UIDragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         rectTransform = GetComponent<RectTransform>();
         canvas = GetComponentInParent<Canvas>();
         canvasGroup = GetComponent<CanvasGroup>();
+
+        if (playerInventory == null)
+            playerInventory = FindFirstObjectByType<PlayerInventory>();
+
+        if (inventorySlot == null)
+            inventorySlot = GetComponentInParent<UIInventorySlot>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -41,5 +50,16 @@ public class UIDragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
         //transform.SetParent(originalParent, false);
         rectTransform.anchoredPosition = Vector2.zero;
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.button != PointerEventData.InputButton.Left)
+            return;
+
+        if (!playerInventory.IsCombineMode)
+            return;
+
+        playerInventory.SelectSlotForCombination(inventorySlot.SlotIndex);
     }
 }

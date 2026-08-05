@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5bc767528204ca04caad526a44612994, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.05
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5bc767528204ca04caad526a44612994, type: 3}
       propertyPath: m_LocalPosition.y
@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5bc767528204ca04caad526a44612994, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 19.758
+      value: 20.06
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5bc767528204ca04caad526a44612994, type: 3}
       propertyPath: m_LocalRotation.w
@@ -134,6 +134,7 @@ MonoBehaviour:
   npcAnimationController: {fileID: 7243749128359792302}
   npcRewardSystem: {fileID: 7949440051257902282}
   playerMovementController: {fileID: 0}
+  playerInteraction: {fileID: 0}
   dialogueButtonController: {fileID: 0}
   dialogueConversation: {fileID: 0}
   answerOneButtonController: {fileID: 0}
@@ -165,7 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCRewardSystem
   rewardOne: {fileID: 3425422804353082286, guid: 41489579a46c98c49a94e0ebf0a207dc, type: 3}
-  rewardTwo: {fileID: 949713956125875965, guid: 3a86511e78970b54eb33617466280817, type: 3}
+  rewardTwo: {fileID: 5664809939263005592, guid: 4ea63ef916658f94aa3756af7146a991, type: 3}
   rewardOnePopUpLocation: {fileID: 0}
   rewardTwoPopUpLocation: {fileID: 0}
   correctAnswers: 0

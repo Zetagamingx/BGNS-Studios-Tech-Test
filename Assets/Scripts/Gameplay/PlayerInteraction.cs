@@ -27,4 +27,9 @@ public class PlayerInteraction : MonoBehaviour
         //Debug.Log("Interact button pressed");
         playerDetection.CurrentInteract?.Interact();
     }
+
+    public void ClearInteraction()
+    {
+        playerDetection.ClearCurrentInteract();
+    }
 }

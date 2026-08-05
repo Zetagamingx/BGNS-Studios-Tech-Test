@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   ItemName: SphereKey
   ID: 2
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: bc043614e39f2b345b5f38cbf7eb7857, type: 3}
   IsStackable: 0
   category: 0
   PickupMessage: 

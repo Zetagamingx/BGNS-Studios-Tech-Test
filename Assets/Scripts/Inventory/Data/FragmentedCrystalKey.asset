@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23fb573ca98336c478797c70f59ae1e0, type: 3}
-  m_Name: CrystalBow
+  m_Name: FragmentedCrystalKey
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  ItemName: CrystalBow
-  ID: 5
-  Icon: {fileID: 21300000, guid: 472cf3ea5fe4e074288c69d4a3742c96, type: 3}
+  ItemName: FragmentedCrystalKey
+  ID: 8
+  Icon: {fileID: 21300000, guid: 93310fbbf07041d4a9dc094703c1c3c4, type: 3}
   IsStackable: 1
   category: 0
   PickupMessage: 

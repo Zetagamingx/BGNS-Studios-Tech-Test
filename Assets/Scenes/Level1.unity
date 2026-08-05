@@ -512,10 +512,10 @@ RectTransform:
   - {fileID: 1156264755}
   m_Father: {fileID: 1225859720}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 740, y: -100}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &150700921
 CanvasRenderer:
@@ -3022,10 +3022,10 @@ RectTransform:
   - {fileID: 43951255}
   m_Father: {fileID: 1225859720}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1180, y: -100}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &890611879
 CanvasRenderer:
@@ -3121,28 +3121,6 @@ Transform:
   - {fileID: 878964185}
   m_Father: {fileID: 616693890}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1074549434 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7949440051257902282, guid: f0e89e67370efcd429d792f9ab981d06, type: 3}
-  m_PrefabInstance: {fileID: 1376125398}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31626d100312606408f09a59fb51e5c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NPCRewardSystem
---- !u!114 &1074549435 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7243749128359792302, guid: f0e89e67370efcd429d792f9ab981d06, type: 3}
-  m_PrefabInstance: {fileID: 1376125398}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34b33c9f5f4877046a9667bbf60cdba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NPCAnimationController
 --- !u!4 &1128981264 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6835348985258216104, guid: 656010dc486276845bdd0e21740151cc, type: 3}
@@ -3168,6 +3146,10 @@ PrefabInstance:
       propertyPath: npcRewardSystem
       value: 
       objectReference: {fileID: 1818239790}
+    - target: {fileID: 6248652144433409940, guid: f0e89e67370efcd429d792f9ab981d06, type: 3}
+      propertyPath: playerInteraction
+      value: 
+      objectReference: {fileID: 1601300412}
     - target: {fileID: 6248652144433409940, guid: f0e89e67370efcd429d792f9ab981d06, type: 3}
       propertyPath: dialogueConversation
       value: 
@@ -3293,7 +3275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7075472, g: 0.25698647, b: 0.25698647, a: 1}
+  m_Color: {r: 0.9622642, g: 0.41304737, b: 0.41304737, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3667,6 +3649,7 @@ MonoBehaviour:
   - Four Swords
   - Black
   - BNGS Studio
+  maxQuestions: 2
 --- !u!114 &1213615833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3812,7 +3795,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1230018811
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4160,17 +4143,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 413929491}
     - target: {fileID: 6248652144433409940, guid: f0e89e67370efcd429d792f9ab981d06, type: 3}
-      propertyPath: npcRewardSystem
+      propertyPath: playerInteraction
       value: 
-      objectReference: {fileID: 1074549434}
+      objectReference: {fileID: 1601300412}
     - target: {fileID: 6248652144433409940, guid: f0e89e67370efcd429d792f9ab981d06, type: 3}
       propertyPath: dialogueConversation
       value: 
       objectReference: {fileID: 296312643}
-    - target: {fileID: 6248652144433409940, guid: f0e89e67370efcd429d792f9ab981d06, type: 3}
-      propertyPath: npcAnimationController
-      value: 
-      objectReference: {fileID: 1074549435}
     - target: {fileID: 6248652144433409940, guid: f0e89e67370efcd429d792f9ab981d06, type: 3}
       propertyPath: dialogueButtonController
       value: 
@@ -4223,10 +4202,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7949440051257902282, guid: f0e89e67370efcd429d792f9ab981d06, type: 3}
-      propertyPath: rewardTwo
-      value: 
-      objectReference: {fileID: 5664809939263005592, guid: 4ea63ef916658f94aa3756af7146a991, type: 3}
     - target: {fileID: 7949440051257902282, guid: f0e89e67370efcd429d792f9ab981d06, type: 3}
       propertyPath: rewardOnePopUpLocation
       value: 
@@ -4441,6 +4416,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f207c2b944b187a41928ac7d76d9b3bf, type: 3}
   m_PrefabInstance: {fileID: 1895340385}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1601300412 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4707759024302992356, guid: 656010dc486276845bdd0e21740151cc, type: 3}
+  m_PrefabInstance: {fileID: 439277421848602190}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b056f3acad5f0e04990fb3a0887debdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
 --- !u!114 &1601300417 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 376777955676444022, guid: 656010dc486276845bdd0e21740151cc, type: 3}
@@ -5390,10 +5376,10 @@ RectTransform:
   - {fileID: 1638001588}
   m_Father: {fileID: 1225859720}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960, y: -100}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2036015146
 CanvasRenderer:
@@ -6274,6 +6260,10 @@ PrefabInstance:
       propertyPath: textMeshPro
       value: 
       objectReference: {fileID: 413929491}
+    - target: {fileID: 6248652144433409940, guid: f0e89e67370efcd429d792f9ab981d06, type: 3}
+      propertyPath: playerInteraction
+      value: 
+      objectReference: {fileID: 1601300412}
     - target: {fileID: 6248652144433409940, guid: f0e89e67370efcd429d792f9ab981d06, type: 3}
       propertyPath: dialogueConversation
       value: 

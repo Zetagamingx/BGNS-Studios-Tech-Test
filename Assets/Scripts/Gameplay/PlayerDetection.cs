@@ -4,6 +4,11 @@ public class PlayerDetection : MonoBehaviour
 {
     public IInteract CurrentInteract { get; private set; }
 
+    public void ClearCurrentInteract()
+    {
+        CurrentInteract = null;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent<IInteract>(out var interact))

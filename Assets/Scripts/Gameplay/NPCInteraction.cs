@@ -7,6 +7,7 @@ public class NPCInteraction : MonoBehaviour, IInteract
     [SerializeField] private NPCRewardSystem npcRewardSystem;
 
     [SerializeField] private PlayerMovementController playerMovementController;
+    [SerializeField] private PlayerInteraction playerInteraction;
 
     [SerializeField] private DialogueButtonController dialogueButtonController;
     [SerializeField] private GameObject dialogueConversation;
@@ -14,10 +15,14 @@ public class NPCInteraction : MonoBehaviour, IInteract
     [SerializeField] private TextMeshProUGUI textMeshPro;
     [SerializeField] private string firstDialogue;
 
-    
+    private CapsuleCollider capsuleCollider;
     public string InteractionPrompt => throw new System.NotImplementedException();
 
-    
+    private void Awake()
+    {
+        capsuleCollider = GetComponent<CapsuleCollider>();
+    }
+
     public void Interact()
     {
         playerMovementController.moveAction.action.Disable();
@@ -40,7 +45,8 @@ public class NPCInteraction : MonoBehaviour, IInteract
         npcRewardSystem.GiveReward();
         npcRewardSystem.correctAnswers = 0;
         playerMovementController.moveAction.action.Enable();
+        playerInteraction.ClearInteraction();
 
-        gameObject.SetActive (false);
+        capsuleCollider.enabled = false;
     }
 }
